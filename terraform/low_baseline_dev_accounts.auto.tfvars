@@ -1,7 +1,7 @@
 rti_core_account_requests = {
   test_account = {
     control_tower_parameters = {
-      AccountEmail = test_account+001+bcutler.org
+      AccountEmail = "test_account+001+bcutler.org"
     }
 
     account_tags = {
