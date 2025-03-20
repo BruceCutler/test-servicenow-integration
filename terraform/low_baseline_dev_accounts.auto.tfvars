@@ -16,4 +16,32 @@ rti_core_account_requests = {
 
     account_customizations_name = "CORE_ACCOUNT"
   }
+  bctestaaa = {
+    control_tower_parameters = {
+      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-bctestaaa@rti.org"
+      AccountName               = "AWS-LOW-BASELINE-DEV-BCTESTAAA"
+      ManagedOrganizationalUnit = "Dev (ou-7w26-5frlrhct)"
+      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-bctestaaa@rti.org"
+      SSOUserFirstName          = "Admin"
+      SSOUserLastName           = "User"
+    }
+
+    account_tags = {
+      "Name"             = "AWS-LOW-BASELINE-DEV-BCTESTAAA"
+      "ChargeCode"       = "0000.012321.000312"
+      "Environment"      = "dev"
+      "TerraformManaged" = "true"
+      "SupportGroup"     = "RTI GTS Infrastructure and Cloud"
+      "ProjectName"      = "BCTESTAAA"
+    }
+
+    change_management_parameters = {
+      change_requested_by = "Bruce C"
+      change_reason       = "Request for AWS-LOW-BASELINE-DEV-BCTESTAAA AWS account"
+    }
+
+    custom_fields = {}
+
+    account_customizations_name = "CORE_ACCOUNT"
+  }
 }
