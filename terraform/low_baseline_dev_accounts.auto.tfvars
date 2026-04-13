@@ -16,84 +16,56 @@ rti_core_account_requests = {
 
     account_customizations_name = "CORE_ACCOUNT"
   }
-  bcutaaa = {
+  bctestaaa = {
     control_tower_parameters = {
-      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaaa@rti.org"
-      AccountName               = "AWS-LOW-BASELINE-DEV-BCUTAAA"
+      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-bctestaaa@rti.org"
+      AccountName               = "AWS-LOW-BASELINE-DEV-BCTESTAAA"
       ManagedOrganizationalUnit = "Dev (ou-7w26-5frlrhct)"
-      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaaa@rti.org"
+      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-bctestaaa@rti.org"
       SSOUserFirstName          = "Admin"
       SSOUserLastName           = "User"
     }
 
     account_tags = {
-      "Name"             = "AWS-LOW-BASELINE-DEV-BCUTAAA"
-      "ChargeCode"       = "002.232.232"
+      "Name"             = "AWS-LOW-BASELINE-DEV-BCTESTAAA"
+      "ChargeCode"       = "0000.012321.000312"
       "Environment"      = "dev"
       "TerraformManaged" = "true"
       "SupportGroup"     = "RTI GTS Infrastructure and Cloud"
-      "ProjectName"      = "BCUTAAA"
+      "ProjectName"      = "BCTESTAAA"
     }
 
     change_management_parameters = {
       change_requested_by = "Bruce C"
-      change_reason       = "Request for AWS-LOW-BASELINE-DEV-BCUTAAA AWS account"
+      change_reason       = "Request for AWS-LOW-BASELINE-DEV-BCTESTAAA AWS account"
     }
 
     custom_fields = {}
 
     account_customizations_name = "CORE_ACCOUNT"
   }
-  bcutaac = {
+  agaaa = {
     control_tower_parameters = {
-      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaac@rti.org"
-      AccountName               = "AWS-LOW-BASELINE-DEV-BCUTAAC"
+      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-agaaa@rti.org"
+      AccountName               = "AWS-LOW-BASELINE-DEV-AGAAA"
       ManagedOrganizationalUnit = "Dev (ou-7w26-5frlrhct)"
-      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaac@rti.org"
+      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-agaaa@rti.org"
       SSOUserFirstName          = "Admin"
       SSOUserLastName           = "User"
     }
 
     account_tags = {
-      "Name"             = "AWS-LOW-BASELINE-DEV-BCUTAAC"
-      "ChargeCode"       = "0021.23213.321321"
+      "Name"             = "AWS-LOW-BASELINE-DEV-AGAAA"
+      "ChargeCode"       = "0001.0002.0003"
       "Environment"      = "dev"
       "TerraformManaged" = "true"
       "SupportGroup"     = "RTI GTS Infrastructure and Cloud"
-      "ProjectName"      = "BCUTAAC"
+      "ProjectName"      = "AGAAA"
     }
 
     change_management_parameters = {
       change_requested_by = "Bruce C"
-      change_reason       = "Request for AWS-LOW-BASELINE-DEV-BCUTAAC AWS account"
-    }
-
-    custom_fields = {}
-
-    account_customizations_name = "CORE_ACCOUNT"
-  }
-  bcutaad = {
-    control_tower_parameters = {
-      AccountEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaad@rti.org"
-      AccountName               = "AWS-LOW-BASELINE-DEV-BCUTAAD"
-      ManagedOrganizationalUnit = "Dev (ou-7w26-5frlrhct)"
-      SSOUserEmail              = "awsadmins.rti+aws-low-baseline-dev-bcutaad@rti.org"
-      SSOUserFirstName          = "Admin"
-      SSOUserLastName           = "User"
-    }
-
-    account_tags = {
-      "Name"             = "AWS-LOW-BASELINE-DEV-BCUTAAD"
-      "ChargeCode"       = "000.001.002"
-      "Environment"      = "dev"
-      "TerraformManaged" = "true"
-      "SupportGroup"     = "RTI GTS Infrastructure and Cloud"
-      "ProjectName"      = "BCUTAAD"
-    }
-
-    change_management_parameters = {
-      change_requested_by = "Bruce C"
-      change_reason       = "Request for AWS-LOW-BASELINE-DEV-BCUTAAD AWS account"
+      change_reason       = "Request for AWS-LOW-BASELINE-DEV-AGAAA AWS account"
     }
 
     custom_fields = {}
