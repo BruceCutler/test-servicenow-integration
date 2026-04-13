@@ -1,0 +1,25 @@
+name: PR Review Agent
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Invoke PR Review Agent
+        env:
+          LAMBDA_URL: ${{ secrets.PR_AGENT_LAMBDA_URL }}
+        run: |
+          curl -X POST "$LAMBDA_URL" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "owner": "${{ github.repository_owner }}",
+              "repo": "${{ github.event.repository.name }}",
+              "pr_number": ${{ github.event.pull_request.number }}
+            }'
