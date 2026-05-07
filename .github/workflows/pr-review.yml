@@ -32,4 +32,6 @@ jobs:
             --agent-runtime-arn arn:aws:bedrock-agentcore:us-east-1:175919345637:runtime/PRReviewAgent_PRReviewAgent-72jBH4Ba79 \
             --payload '{"owner": "${{ github.repository_owner }}", "repo": "${{ github.event.repository.name }}", "pr_number": ${{ github.event.pull_request.number }}}' \
             --runtime-session-id "${{ github.run_id }}-${{ github.event.pull_request.number }}" \
-            --region us-east-1
+            --region us-east-1 \
+            /tmp/response.json
+          cat /tmp/response.json
