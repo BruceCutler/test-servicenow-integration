@@ -29,7 +29,7 @@ jobs:
       - name: Invoke PR Review Agent
         run: |
           aws bedrock-agentcore invoke-agent-runtime \
-            --agent-runtime-id PRReviewAgent_PRReviewAgent-72jBH4Ba79 \
+            --agent-runtime-arn arn:aws:bedrock-agentcore:us-east-1:175919345637:runtime/PRReviewAgent_PRReviewAgent-72jBH4Ba79 \
             --payload '{"owner": "${{ github.repository_owner }}", "repo": "${{ github.event.repository.name }}", "pr_number": ${{ github.event.pull_request.number }}}' \
             --session-id "${{ github.run_id }}-${{ github.event.pull_request.number }}" \
             --region us-east-1
