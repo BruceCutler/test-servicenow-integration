@@ -29,7 +29,7 @@ jobs:
       - name: Invoke PR Review Agent
         run: |
           PAYLOAD=$(echo -n '{"owner": "${{ github.repository_owner }}", "repo": "${{ github.event.repository.name }}", "pr_number": ${{ github.event.pull_request.number }}}' | base64 -w 0)
-          SESSION_ID="pr-${{ github.event.pull_request.number }}-run-${{ github.run_id }}-${{ github.run_attempt }}"
+          SESSION_ID="pr-${{ github.event.pull_request.number }}-run-${{ github.run_id }}-${{ github.run_attempt }}-0123456789012345"
           aws bedrock-agentcore invoke-agent-runtime \
             --agent-runtime-arn arn:aws:bedrock-agentcore:us-east-1:175919345637:runtime/PRReviewAgent_PRReviewAgent-72jBH4Ba79 \
             --payload "$PAYLOAD" \
