@@ -10,16 +10,19 @@ jobs:
     permissions:
       pull-requests: write
       contents: read
+      id-token: write  # required for OIDC authentication
 
     steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::175919345637:role/GitHubActionsRole
+          aws-region: us-east-1
+
       - name: Invoke PR Review Agent
-        env:
-          LAMBDA_URL: ${{ secrets.PR_AGENT_LAMBDA_URL }}
         run: |
-          curl -X POST "$LAMBDA_URL" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "owner": "${{ github.repository_owner }}",
-              "repo": "${{ github.event.repository.name }}",
-              "pr_number": ${{ github.event.pull_request.number }}
-            }'
+          aws bedrock-agentcore invoke-agent-runtime \
+            --agent-runtime-id PRReviewAgent_PRReviewAgent-72jBH4Ba79 \
+            --payload '{"owner": "${{ github.repository_owner }}", "repo": "${{ github.event.repository.name }}", "pr_number": ${{ github.event.pull_request.number }}}' \
+            --session-id "${{ github.run_id }}-${{ github.event.pull_request.number }}" \
+            --region us-east-1
