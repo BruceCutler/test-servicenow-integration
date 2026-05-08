@@ -8,6 +8,7 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_REGION: ${{ vars.AWS_REGION || 'us-east-1' }}
   AGENT_RUNTIME_ARN: ${{ secrets.AGENT_RUNTIME_ARN }}
+  AWS_GITHUB_ROLE_ARN: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
 
 jobs:
   review:
