@@ -21,8 +21,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6.1.0
         with:
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GitHubActionsRole
-          aws-region: us-east-1
+          role-to-assume: ${{ env.AWS_GITHUB_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
       
       - name: Install latest AWS CLI
         run: |
@@ -44,6 +44,6 @@ jobs:
             --agent-runtime-arn ${{ env.AGENT_RUNTIME_ARN }} \
             --payload "$PAYLOAD" \
             --runtime-session-id "$SESSION_ID" \
-            --region us-east-1 \
+            --region ${{ env.AWS_REGION }} \
             /tmp/response.json
           cat /tmp/response.json
