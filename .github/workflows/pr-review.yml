@@ -54,6 +54,10 @@ jobs:
             exit 1
           fi
 
+          # Increase CLI read timeout to 300 seconds
+          aws configure set default.cli_read_timeout 300
+          aws configure set default.cli_connect_timeout 60
+
           RESPONSE_FILE=$(mktemp)
           trap 'rm -f "$RESPONSE_FILE"' EXIT
 
