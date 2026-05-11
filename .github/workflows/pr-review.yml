@@ -5,9 +5,7 @@ on:
     types: [opened, reopened, synchronize]
 
 env:
-  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_REGION: ${{ vars.AWS_REGION || 'us-east-1' }}
-  AGENT_RUNTIME_ARN: ${{ secrets.AGENT_RUNTIME_ARN }}
 
 jobs:
   review:
@@ -19,6 +17,7 @@ jobs:
 
     steps:
       - name: Configure AWS Credentials
+        # v6.1.0
         uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885
         with:
           role-to-assume: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
