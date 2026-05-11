@@ -66,4 +66,9 @@ jobs:
             --runtime-session-id "$SESSION_ID" \
             "$RESPONSE_FILE"
 
-          cat "$RESPONSE_FILE"
+          RESPONSE=$(cat "$RESPONSE_FILE")
+          echo "$RESPONSE"
+          if echo "$RESPONSE" | jq -e '.errorMessage // .error' > /dev/null 2>&1; then
+            echo "::error::Agent returned an error: $(echo "$RESPONSE" | jq -r '.errorMessage // .error')"
+            exit 1
+          fi
