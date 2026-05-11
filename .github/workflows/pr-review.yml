@@ -8,7 +8,6 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_REGION: ${{ vars.AWS_REGION || 'us-east-1' }}
   AGENT_RUNTIME_ARN: ${{ secrets.AGENT_RUNTIME_ARN }}
-  AWS_GITHUB_ROLE_ARN: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
 
 jobs:
   review:
@@ -20,9 +19,9 @@ jobs:
 
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 #6.1.1
+        uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885
         with:
-          role-to-assume: ${{ env.AWS_GITHUB_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
       
       - name: Install latest AWS CLI
@@ -40,6 +39,7 @@ jobs:
           REPO_NAME:  ${{ github.event.repository.name }}
           RUN_ID:     ${{ github.run_id }}
           RUN_ATTEMPT: ${{ github.run_attempt }}
+          AGENT_RUNTIME_ARN: ${{ secrets.AGENT_RUNTIME_ARN }}
         run: |
           PAYLOAD=$(jq -cn \
             --arg  owner  "$REPO_OWNER" \
